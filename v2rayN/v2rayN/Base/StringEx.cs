@@ -44,6 +44,11 @@ namespace v2rayN.Base
             }
         }
 
+        /// <summary>
+        /// 可以对null串进行trim
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static string TrimEx(this string value)
         {
             return value == null ? string.Empty : value.Trim();

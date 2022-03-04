@@ -90,7 +90,7 @@ namespace v2rayN.Handler
             try
             {
                 //TODO To be verified
-                Utils.RegWriteValue(@"Software\Microsoft\Windows\CurrentVersion\Internet Settings", "ProxyEnable", 0);
+                Utils.RegWriteValue(@"Software\Microsoft\Windows\CurrentVersion\Internet Settings", "ProxyEnable", "0");
             }
             catch
             {

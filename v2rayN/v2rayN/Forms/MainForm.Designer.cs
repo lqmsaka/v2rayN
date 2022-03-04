@@ -223,6 +223,7 @@
             this.menuExport2ShareUrl,
             this.menuExport2SubContent});
             this.cmsLv.Name = "cmsLv";
+            this.cmsLv.OwnerItem = this.tsbServer;
             resources.ApplyResources(this.cmsLv, "cmsLv");
             // 
             // menuAddVmessServer
@@ -460,6 +461,7 @@
             // 
             // cmsMsgBox
             // 
+            this.cmsMsgBox.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsMsgBox.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuMsgBoxSelectAll,
             this.menuMsgBoxCopy,

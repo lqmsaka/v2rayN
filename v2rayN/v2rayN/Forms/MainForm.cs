@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Drawing;
 using System.Text;
@@ -1415,7 +1416,8 @@ namespace v2rayN.Forms
         }
         private void SetCurrentLanguage(string value)
         {
-            Utils.RegWriteValue(Global.MyRegPath, Global.MyRegKeyLanguage, value);
+            ConfigurationManager.AppSettings[Global.MyRegKeyLanguage] = value;
+            //Utils.RegWriteValue(Global.MyRegPath, Global.MyRegKeyLanguage, value);
             //Application.Restart();
         }
 

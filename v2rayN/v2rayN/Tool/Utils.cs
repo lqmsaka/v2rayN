@@ -21,7 +21,8 @@ using System.Security.Principal;
 using v2rayN.Base;
 using Newtonsoft.Json.Linq;
 using System.Web;
-using log4net;
+using NLog;
+using System.Configuration;
 
 namespace v2rayN
 {
@@ -536,19 +537,19 @@ namespace v2rayN
         /// <returns></returns>
         public static bool IsAutoRun()
         {
-            try
-            {
-                string value = RegReadValue(autoRunRegPath, autoRunName, "");
-                string exePath = GetExePath();
-                if (value?.Equals(exePath) == true || value?.Equals($"\"{exePath}\"") == true)
-                {
-                    return true;
-                }
-            }
-            catch (Exception ex)
-            {
-                SaveLog(ex.Message, ex);
-            }
+            //try
+            //{
+            //    string value = RegReadValue(autoRunRegPath, autoRunName, "");
+            //    string exePath = GetExePath();
+            //    if (value?.Equals(exePath) == true || value?.Equals($"\"{exePath}\"") == true)
+            //    {
+            //        return true;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    SaveLog(ex.Message, ex);
+            //}
             return false;
         }
 
@@ -582,54 +583,56 @@ namespace v2rayN
 
         public static string RegReadValue(string path, string name, string def)
         {
-            RegistryKey regKey = null;
-            try
-            {
-                regKey = Registry.CurrentUser.OpenSubKey(path, false);
-                string value = regKey?.GetValue(name) as string;
-                if (IsNullOrEmpty(value))
-                {
-                    return def;
-                }
-                else
-                {
-                    return value;
-                }
-            }
-            catch (Exception ex)
-            {
-                SaveLog(ex.Message, ex);
-            }
-            finally
-            {
-                regKey?.Close();
-            }
-            return def;
+            return ConfigurationManager.AppSettings[name] ?? def;
+            //RegistryKey regKey = null;
+            //try
+            //{
+            //    regKey = Registry.CurrentUser.OpenSubKey(path, false);
+            //    string value = regKey?.GetValue(name) as string;
+            //    if (IsNullOrEmpty(value))
+            //    {
+            //        return def;
+            //    }
+            //    else
+            //    {
+            //        return value;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    SaveLog(ex.Message, ex);
+            //}
+            //finally
+            //{
+            //    regKey?.Close();
+            //}
+            //return def;
         }
 
-        public static void RegWriteValue(string path, string name, object value)
+        public static void RegWriteValue(string path, string name, string value)
         {
-            RegistryKey regKey = null;
-            try
-            {
-                regKey = Registry.CurrentUser.CreateSubKey(path);
-                if (IsNullOrEmpty(value.ToString()))
-                {
-                    regKey?.DeleteValue(name, false);
-                }
-                else
-                {
-                    regKey?.SetValue(name, value);
-                }
-            }
-            catch (Exception ex)
-            {
-                SaveLog(ex.Message, ex);
-            }
-            finally
-            {
-                regKey?.Close();
-            }
+            ConfigurationManager.AppSettings[name] = value;
+            //RegistryKey regKey = null;
+            //try
+            //{
+            //    regKey = Registry.CurrentUser.CreateSubKey(path);
+            //    if (IsNullOrEmpty(value.ToString()))
+            //    {
+            //        regKey?.DeleteValue(name, false);
+            //    }
+            //    else
+            //    {
+            //        regKey?.SetValue(name, value);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    SaveLog(ex.Message, ex);
+            //}
+            //finally
+            //{
+            //    regKey?.Close();
+            //}
         }
 
         /// <summary>

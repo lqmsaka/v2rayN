@@ -262,7 +262,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tool\FileManager.cs" />
     <Compile Include="Tool\Job.cs" />
-    <Compile Include="Tool\Logging.cs" />
     <Compile Include="Tool\QueryableExtension.cs" />
     <Compile Include="Tool\UIRes.cs" />
     <Compile Include="Tool\UI.cs" />
@@ -402,6 +401,9 @@
     <EmbeddedResource Include="app.config">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -497,11 +499,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="log4net">
-      <Version>2.0.14</Version>
-    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="NLog">
+      <Version>4.7.14</Version>
     </PackageReference>
     <PackageReference Include="ZXing.Net">
       <Version>0.16.8</Version>
