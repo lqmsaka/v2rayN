@@ -1220,6 +1220,23 @@ namespace v2rayN.Forms
                 item.Checked = ((int)type == k);
             }
 
+            TsmOn.Checked = false;
+            TsmOff.Checked = false;
+            TsmPac.Checked = false;
+            switch (type)
+            {
+                case ESysProxyType.ForcedChange:
+                    TsmPac.Checked = true;
+                    break;
+                case ESysProxyType.ForcedClear:
+                    TsmOff.Checked = true;
+                    break;
+                case ESysProxyType.Unchanged:
+                    TsmOn.Checked = true;
+                    break;
+                default:break;
+            }
+
             ConfigHandler.SaveConfig(ref config, false);
             DisplayToolStatus();
         }
@@ -1548,5 +1565,19 @@ namespace v2rayN.Forms
         }
         #endregion
 
+        private void TsmOff_Click(object sender, EventArgs e)
+        {
+            SetListenerType(ESysProxyType.ForcedClear);
+        }
+
+        private void TsmOn_Click(object sender, EventArgs e)
+        {
+            SetListenerType(ESysProxyType.Unchanged);
+        }
+
+        private void TsmPac_Click(object sender, EventArgs e)
+        {
+            SetListenerType(ESysProxyType.ForcedChange);
+        }
     }
 }

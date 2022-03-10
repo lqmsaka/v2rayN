@@ -64,8 +64,8 @@
             this.menuExport2ServerConfig = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExport2ShareUrl = new System.Windows.Forms.ToolStripMenuItem();
             this.menuExport2SubContent = new System.Windows.Forms.ToolStripMenuItem();
-            this.qrCodeControl = new v2rayN.Forms.QRCodeControl();
             this.tsbServer = new System.Windows.Forms.ToolStripDropDownButton();
+            this.qrCodeControl = new v2rayN.Forms.QRCodeControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gbMsgTitle = new System.Windows.Forms.GroupBox();
@@ -86,6 +86,10 @@
             this.toolSslBlank4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.notifyMain = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.TsmOff = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmOn = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmPac = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator16 = new System.Windows.Forms.ToolStripSeparator();
             this.menuSysAgentMode = new System.Windows.Forms.ToolStripMenuItem();
             this.menuKeepClear = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGlobal = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,6 +98,7 @@
             this.menuServers = new System.Windows.Forms.ToolStripMenuItem();
             this.menuServers2 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.TsmOthers = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAddServers2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuScanScreen2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuUpdateSubscriptions = new System.Windows.Forms.ToolStripMenuItem();
@@ -408,17 +413,17 @@
             resources.ApplyResources(this.menuExport2SubContent, "menuExport2SubContent");
             this.menuExport2SubContent.Click += new System.EventHandler(this.menuExport2SubContent_Click);
             // 
-            // qrCodeControl
-            // 
-            resources.ApplyResources(this.qrCodeControl, "qrCodeControl");
-            this.qrCodeControl.Name = "qrCodeControl";
-            // 
             // tsbServer
             // 
             this.tsbServer.DropDown = this.cmsLv;
             this.tsbServer.Image = global::v2rayN.Properties.Resources.server;
             resources.ApplyResources(this.tsbServer, "tsbServer");
             this.tsbServer.Name = "tsbServer";
+            // 
+            // qrCodeControl
+            // 
+            resources.ApplyResources(this.qrCodeControl, "qrCodeControl");
+            this.qrCodeControl.Name = "qrCodeControl";
             // 
             // splitContainer1
             // 
@@ -566,21 +571,45 @@
             this.cmsMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             resources.ApplyResources(this.cmsMain, "cmsMain");
             this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TsmOff,
+            this.TsmOn,
+            this.TsmPac,
+            this.toolStripSeparator16,
             this.menuSysAgentMode,
             this.menuRoutings,
             this.menuServers,
             this.menuServers2,
             this.toolStripSeparator13,
-            this.menuAddServers2,
-            this.menuScanScreen2,
-            this.menuUpdateSubscriptions,
-            this.menuUpdateSubViaProxy,
+            this.TsmOthers,
             this.toolStripSeparator2,
             this.menuExit});
             this.cmsMain.Name = "contextMenuStrip1";
             this.cmsMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.cmsMain.ShowCheckMargin = true;
             this.cmsMain.ShowImageMargin = false;
+            // 
+            // TsmOff
+            // 
+            this.TsmOff.Name = "TsmOff";
+            resources.ApplyResources(this.TsmOff, "TsmOff");
+            this.TsmOff.Click += new System.EventHandler(this.TsmOff_Click);
+            // 
+            // TsmOn
+            // 
+            this.TsmOn.Name = "TsmOn";
+            resources.ApplyResources(this.TsmOn, "TsmOn");
+            this.TsmOn.Click += new System.EventHandler(this.TsmOn_Click);
+            // 
+            // TsmPac
+            // 
+            this.TsmPac.Name = "TsmPac";
+            resources.ApplyResources(this.TsmPac, "TsmPac");
+            this.TsmPac.Click += new System.EventHandler(this.TsmPac_Click);
+            // 
+            // toolStripSeparator16
+            // 
+            this.toolStripSeparator16.Name = "toolStripSeparator16";
+            resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
             // 
             // menuSysAgentMode
             // 
@@ -631,6 +660,17 @@
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
+            // 
+            // TsmOthers
+            // 
+            this.TsmOthers.Name = "TsmOthers";
+            this.TsmOthers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]{
+            this.menuAddServers2,
+            this.menuScanScreen2,
+            this.menuUpdateSubscriptions,
+            this.menuUpdateSubViaProxy,
+            });
+            resources.ApplyResources(this.TsmOthers, "TsmOthers");
             // 
             // menuAddServers2
             // 
@@ -1056,6 +1096,11 @@
         private System.Windows.Forms.ToolStripMenuItem tsbSubUpdateViaProxy;
         private System.Windows.Forms.ToolStripMenuItem menuUpdateSubViaProxy;
         private System.Windows.Forms.ToolStripMenuItem menuMsgBoxClear;
+        private System.Windows.Forms.ToolStripMenuItem TsmOff;
+        private System.Windows.Forms.ToolStripMenuItem TsmOn;
+        private System.Windows.Forms.ToolStripMenuItem TsmPac;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator16;
+        private System.Windows.Forms.ToolStripMenuItem TsmOthers;
     }
 }
 
