@@ -422,6 +422,21 @@
     <EmbeddedResource Include="Sample\custom_routing_global" />
     <EmbeddedResource Include="Sample\custom_routing_locked" />
     <EmbeddedResource Include="Sample\custom_routing_black" />
+    <None Include="v2ray\geoip-only-cn-private.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="v2ray\geoip.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="v2ray\geosite.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="v2ray\vpoint_socks_vmess.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="v2ray\vpoint_vmess_freedom.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Protobuf Include="Protos\Statistics.proto" />
   </ItemGroup>
   <ItemGroup>
@@ -482,6 +497,15 @@
     <None Include="Resources\minimize.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="v2ray\v2ctl.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="v2ray\v2ray.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="v2ray\wv2ray.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\share.png" />
     <None Include="Resources\promotion.png" />
     <None Include="Resources\sub.png" />
@@ -512,6 +536,7 @@
       <Version>0.16.8</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy /y $(SolutionDir)v2rayUpgrade\$(OutDir)* $(TargetDir)
