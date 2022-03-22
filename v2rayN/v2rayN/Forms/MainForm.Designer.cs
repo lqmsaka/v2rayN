@@ -96,7 +96,6 @@
             this.menuKeepNothing = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRoutings = new System.Windows.Forms.ToolStripMenuItem();
             this.menuServers = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuServers2 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmOthers = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAddServers2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -142,6 +141,7 @@
             this.tsbPromotion = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbClose = new System.Windows.Forms.ToolStripButton();
+            this.menuServers2 = new System.Windows.Forms.ToolStripComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
@@ -654,14 +654,6 @@
             resources.ApplyResources(this.menuServers, "menuServers");
             this.menuServers.Name = "menuServers";
             // 
-            // menuServers2
-            // 
-            resources.ApplyResources(this.menuServers2, "menuServers2");
-            this.menuServers2.BackColor = System.Drawing.SystemColors.Window;
-            this.menuServers2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.menuServers2.DropDownWidth = 500;
-            this.menuServers2.Name = "menuServers2";
-            // 
             // toolStripSeparator13
             // 
             resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
@@ -972,6 +964,14 @@
             this.tsbClose.Name = "tsbClose";
             this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
             // 
+            // menuServers2
+            // 
+            resources.ApplyResources(this.menuServers2, "menuServers2");
+            this.menuServers2.BackColor = System.Drawing.SystemColors.Window;
+            this.menuServers2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.menuServers2.DropDownWidth = 200;
+            this.menuServers2.Name = "menuServers2";
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -1113,7 +1113,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolSslInboundInfo;
         private System.Windows.Forms.ToolStripStatusLabel toolSslRoutingRule;
         private System.Windows.Forms.ToolStripStatusLabel toolSslBlank2;
-        private System.Windows.Forms.ToolStripComboBox menuServers2;
         private System.Windows.Forms.ToolStripMenuItem tsbSubUpdateViaProxy;
         private System.Windows.Forms.ToolStripMenuItem menuUpdateSubViaProxy;
         private System.Windows.Forms.ToolStripMenuItem menuMsgBoxClear;
@@ -1124,6 +1123,7 @@
         private System.Windows.Forms.ToolStripMenuItem TsmOthers;
         private System.Windows.Forms.ToolStripButton TsbZeroSetting;
         private System.Windows.Forms.ToolStripButton TsbOptionSetting2;
+        private System.Windows.Forms.ToolStripComboBox menuServers2;
     }
 }
 
