@@ -422,6 +422,7 @@
     <EmbeddedResource Include="Sample\custom_routing_global" />
     <EmbeddedResource Include="Sample\custom_routing_locked" />
     <EmbeddedResource Include="Sample\custom_routing_black" />
+    <None Include="v2ray\config.json" />
     <None Include="v2ray\geoip-only-cn-private.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
