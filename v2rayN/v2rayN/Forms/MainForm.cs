@@ -1579,5 +1579,29 @@ namespace v2rayN.Forms
         {
             SetListenerType(ESysProxyType.ForcedChange);
         }
+
+        private void TsbZeroSetting_Click(object sender, EventArgs e)
+        {
+            using (var fm = new RoutingRuleSettingForm())
+            {
+                fm.EditIndex = 0;
+                if (fm.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshRoutingsMenu();
+                    RefreshServers();
+                    LoadV2ray();
+                }
+            }
+        }
+
+        private void TsbOptionSetting2_Click(object sender, EventArgs e)
+        {
+            using (OptionSettingForm fm = new OptionSettingForm())
+                if (fm.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshServers();
+                    LoadV2ray();
+                }
+        }
     }
 }
