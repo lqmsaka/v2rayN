@@ -20,7 +20,7 @@ namespace v2rayN.Handler
     /// </summary>
     class V2rayHandler
     {
-        private static string v2rayConfigRes = Global.v2rayConfigFileName;
+        private static string v2rayConfigRes = Path.Combine(Global.v2rayFolder, Global.v2rayConfigFileName);
         private List<string> lstV2ray;
         private string coreUrl;
         public event ProcessDelegate ProcessEvent;
@@ -40,8 +40,8 @@ namespace v2rayN.Handler
             {
                 lstV2ray = new List<string>
                 {
-                    "wv2ray",
-                    "v2ray"
+                    Path.Combine(Global.v2rayFolder,Global.v2rayWv2rayFileName),
+                    Path.Combine(Global.v2rayFolder,Global.v2rayV2rayFileName)
                 };
                 coreUrl = Global.v2flyCoreUrl;
             }
@@ -49,7 +49,7 @@ namespace v2rayN.Handler
             {
                 lstV2ray = new List<string>
                 {
-                    "xray"
+                    Path.Combine(Global.v2rayFolder,Global.v2rayXrayFileName)
                 };
                 coreUrl = Global.xrayCoreUrl;
             }

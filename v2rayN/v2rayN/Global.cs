@@ -42,6 +42,10 @@ namespace v2rayN
         /// v2ray配置文件名
         /// </summary>
         public const string v2rayConfigFileName = "config.json";
+        public const string v2rayWv2rayFileName = "wv2ray";
+        public const string v2rayV2rayFileName = "v2ray";
+        public const string v2rayXrayFileName = "xray";
+        public const string v2rayFolder = "v2ray";
 
         /// <summary>
         /// v2ray客户端配置样例文件名
