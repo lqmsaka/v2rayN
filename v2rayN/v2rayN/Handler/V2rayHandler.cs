@@ -212,7 +212,7 @@ namespace v2rayN.Handler
                     StartInfo = new ProcessStartInfo
                     {
                         FileName = fileName,
-                        WorkingDirectory = Utils.StartupPath(),
+                        WorkingDirectory = Path.Combine(Utils.StartupPath(), Global.v2rayFolder), 
                         UseShellExecute = false,
                         RedirectStandardOutput = true,
                         RedirectStandardError = true,
